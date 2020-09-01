@@ -38,19 +38,11 @@ exports.editUser = async (req, res) => {
     if (!user) {
       return res.status(422).send({ error: "User Not found" });
     }
-    const { firstName, lastName, userName, roles, email, password } = req.body;
-    const updatedUser = await User.updateOne({
-      _id: req.body._id,
-      firstName,
-      lastName,
-      userName,
-      roles,
-      email,
-      password
-    });
 
+    await user.update(req.body);
     res.status(201).send("User Updated Successfully");
   } catch (error) {
+    console.log(error);
     res.status(400).send(error);
   }
 };

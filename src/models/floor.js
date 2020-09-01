@@ -18,6 +18,10 @@ const floorSchema = new mongoose.Schema({
   mode: {
     type: String,
     required: true
+  },
+  clusters: {
+    type: Array,
+    default: []
   }
 });
 
