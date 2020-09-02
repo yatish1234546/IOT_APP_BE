@@ -29,8 +29,7 @@ exports.login = async (req, res) => {
 
     res.status(200).json({
       token,
-      name: user.name,
-      user: user.userName
+      user
     });
   } catch (error) {
     res.status(400).send(error);

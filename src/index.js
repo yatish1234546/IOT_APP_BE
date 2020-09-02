@@ -9,6 +9,7 @@ require("./controllers/facility");
 const auth = require("./routes/auth");
 const user = require("./routes/user");
 const floor = require("./routes/floor");
+const zone = require("./routes/zone");
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -16,6 +17,7 @@ app.use(cors());
 app.use("/auth", auth);
 app.use("/user", user);
 app.use("/floor", floor);
+app.use("/zone", zone);
 
 mongoose
   .connect(keys.mongoURI, {
